@@ -4,12 +4,7 @@
   "parameters": {
     "webAppName": {
       "type": "string",
-      "defaultValue": "[concat('webApp-', uniqueString(resourceGroup().id))]",
-      "minLength": 2,
-      "metadata": {
-        "description": "Web app name."
-      },
-      "minLength": 2
+      "defaultValue": "[concat('webApp-', uniqueString(resourceGroup().id))]"
     },
     "sku": {
       "type": "string",
