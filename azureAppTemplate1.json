@@ -5,44 +5,67 @@
         "subscriptionId": {
             "type": "string"
         },
-        "name": {
-            "type": "string"
-        },
-        "location": {
-            "type": "string"
-        },
+    "name": {
+      "type": "string",
+      "defaultValue": "[concat('webApp-', uniqueString(resourceGroup().id))]",
+      "minLength": 2,
+      "metadata": {
+        "description": "Web app name."
+      }
+    },
+    "location": {
+      "type": "string",
+      "defaultValue": "[resourceGroup().location]",
+      "metadata": {
+        "description": "Location for all resources."
+      }
+    },
         "hostingPlanName": {
-            "type": "string"
-        },
+      "type": "string",
+      "defaultValue": "ASP-azureAppTemplate-b7e9"
+    },
         "serverFarmResourceGroup": {
-            "type": "string"
-        },
+      "type": "string",
+      "defaultValue": "azureAppTemplate"
+    },
         "alwaysOn": {
-            "type": "bool"
+            "type": "bool",
+      "defaultValue": "false"
         },
-        "sku": {
-            "type": "string"
-        },
-        "skuCode": {
-            "type": "string"
-        },
+    "sku": {
+      "type": "string",
+      "defaultValue": "Free"
+    },
+    "skuCode": {
+      "type": "string",
+      "defaultValue": "F1",
+      "metadata": {
+        "description": "The SKU of App Service Plan."
+      }
+    },
         "workerSize": {
-            "type": "string"
+            "type": "string",
+      "defaultValue": "0"
         },
         "workerSizeId": {
-            "type": "string"
+            "type": "string",
+      "defaultValue": "0"
         },
         "numberOfWorkers": {
-            "type": "string"
+            "type": "string",
+      "defaultValue": "1"
         },
         "currentStack": {
-            "type": "string"
+            "type": "string",
+      "defaultValue": "dotnetcore"
         },
         "phpVersion": {
-            "type": "string"
+            "type": "string",
+      "defaultValue": "OFF"
         },
         "errorLink": {
-            "type": "string"
+            "type": "string",
+      "defaultValue": "https://ankitfirstapp.scm.azurewebsites.net/detectors?type=tools&name=eventviewer"
         }
     },
     "resources": [
